@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2017_06_21_145055) do
+ActiveRecord::Schema.define(version: 2019_07_25_204410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.bigint "source_id", null: false
+    t.datetime "start_at", null: false
+    t.datetime "end_at", null: false
+    t.string "title", null: false
+    t.string "url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["end_at"], name: "index_events_on_end_at"
+    t.index ["source_id"], name: "index_events_on_source_id"
+    t.index ["start_at"], name: "index_events_on_start_at"
+    t.index ["title"], name: "index_events_on_title"
+  end
 
   create_table "links", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -22,6 +36,14 @@ ActiveRecord::Schema.define(version: 2017_06_21_145055) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_links_on_user_id"
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["url"], name: "index_sources_on_url", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,6 +65,7 @@ ActiveRecord::Schema.define(version: 2017_06_21_145055) do
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
+  add_foreign_key "events", "sources"
   add_foreign_key "links", "users"
   add_foreign_key "votes", "links"
   add_foreign_key "votes", "users"

@@ -46,7 +46,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     ast (2.4.0)
-    bcrypt (3.1.12)
+    bcrypt (3.1.13)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.2)
@@ -95,6 +95,7 @@ GEM
     parallel (1.12.1)
     parser (2.5.3.0)
       ast (~> 2.4.0)
+    pg (1.1.4)
     pg (1.1.4-x64-mingw32)
     powerpack (0.1.2)
     public_suffix (3.0.3)
@@ -182,7 +183,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  bcrypt
+  bcrypt (~> 3.1.7)
   byebug
   factory_bot_rails
   graphiql-rails (= 1.5.0)
