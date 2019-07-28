@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration[5.1]
     create_table :sources do |t|
       t.string :name, null: false
       t.string :url, null: true
-      t.string :page_date_format, null: false
+      t.string :config, null: false
       t.index :url, unique: false
       t.timestamps
     end

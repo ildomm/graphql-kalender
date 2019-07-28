@@ -9,6 +9,7 @@ class GraphqlController < ApplicationController
   end
 
   def task
+
     worker = SiteWorker.new
     worker.perform(false)
 

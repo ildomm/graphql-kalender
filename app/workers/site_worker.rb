@@ -1,6 +1,12 @@
 class SiteWorker
 
-  def perform( has_to_wait )
+  # Default sources config, first version
+  # A http://berghain.de
+  # {"page_format":"/events/%Y-%m","driver":"nokogiri","xpath":"//h4","url":"a|href","title":"a|span","dates":"a"}
+  # B https://gorki.de
+  # {"page_format":"/en/programme/%Y/%m/all","driver":"nokogiri","xpath":"//*[@id=\"block-gorki-content\"]/div[1]/*","url":"a|href","title":"a|title","dates":"a|href|/"}
+
+  def perform(has_to_wait)
     @has_to_wait = has_to_wait
     sources.each do |source|
       urls = format_urls(source)
@@ -8,7 +14,7 @@ class SiteWorker
     end
   end
 
-  # https://www.deutscheoperberlin.de/en_EN/calendar?category_system=from_file&date=01.09.2019&p=2
+
   private
 
   def sources
@@ -18,11 +24,11 @@ class SiteWorker
   def format_urls(source)
     urls = []
     current_time = Time.new
+    config = JSON.parse(source.config)
 
     # A year from now
-    # TODO: configure it in database
     12.times do |index|
-      urls << source.url + current_time.strftime(source.page_date_format)
+      urls << source.url + current_time.strftime(config['page_format'])
       current_time = current_time + 1.month
     end
     urls

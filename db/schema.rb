@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_204410) do
   create_table "sources", force: :cascade do |t|
     t.string "name", null: false
     t.string "url", null: false
-    t.string :page_date_format, null: false
+    t.string "config", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["url"], name: "index_sources_on_url", unique: true

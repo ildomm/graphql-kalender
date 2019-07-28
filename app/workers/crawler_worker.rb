@@ -1,44 +1,55 @@
 require 'net/http'
 require 'uri'
 require 'nokogiri'
-
-module TimeSplitter
-  def self.call(time_start, time_end)
-    seconds = ((time_end - time_start)).round
-    minutes = ((time_end - time_start) / 60).round
-    [minutes, seconds]
-  end
-end
+require 'selenium-webdriver'
 
 class CrawlerWorker
 
-  # TODO: define worker logger
+  # TODO: define worker own logger
 
   def perform(source, url)
-    puts "Processing url: #{@source.name} | #{@url}"
+    puts "Processing url: #{source.name} | #{url}"
     time_start = Time.now
 
     @source = source
     @url = url
     @events = []
 
-    unless contents
-      return
-    end
-    puts "url: #{@url} size #{@content.length}"
+    # Define parsers config
+    @config = JSON.parse(source.config)
 
-    unless extract
+    # Extraction step
+    case @config['driver']
+    when "selenium"
+      unless extract_with_selenium
+        return
+      end
+    when "nokogiri"
+      unless extract_with_nokogiri
+        return
+      end
+    else
       return
     end
+
     puts "url: #{@url} events: #{@events.length}"
 
+    # Database step
     persist
 
-    minutes, seconds = TimeSplitter.call(time_start, Time.now)
+    # Analysis step
+    minutes, seconds = time_split(time_start, Time.now)
     puts "Execution time: #{minutes} minutes, #{seconds} seconds"
   end
 
   private
+
+  # TODO: Implement
+  # For websites such https://www.deutscheoperberlin.de
+  # it is necessary because lazy load when using JS
+  def extract_with_selenium
+    return false
+  end
 
   def contents
     @content = Net::HTTP.get_response(URI.parse(@url)).body
@@ -50,19 +61,47 @@ class CrawlerWorker
     false
   end
 
-  def extract
-    page = Nokogiri::HTML(@content)
-    page.xpath("//h4").each do |element|
-      url = element.at_css('a').attr('href')
-      title = element.at_css('a').at_css('span').text
-
-      start_at = parse_date( element.at_css('a').text, title, url )
-      end_at = parse_date( element.at_css('a').text, title, url )
-
-      @events << { url: url, start_at: start_at, end_at: end_at, title: title }
+  def extract_with_nokogiri
+    unless contents
+      return
     end
 
-    puts "url: #{@url} events: #{@events.length}"
+    puts "url: #{@url} size #{@content.length}"
+
+    page = Nokogiri::HTML(@content)
+
+    # TODO: Improve dinamicu Such rude way to navigate over tahts
+    page.xpath(@config['xpath']).each do |element|
+
+      # TODO: improve validations
+      # Still a such rude way to navigate over tags
+      # Only requires time to implement a better way of splitting elements
+
+      config = @config['url'].split('|')
+      url = element.at_css(config[0]).attr(config[1])
+
+      config = @config['title'].split('|')
+      title = element.at_css(config[0]).attr(config[1])
+      if title.nil?
+        title = element.at_css(config[0]).at_css(config[1]).text
+      end
+
+      start_at = ''
+      config = @config['dates'].split('|')
+      if config.length == 1
+        start_at = element.at_css(config[0]).text
+      else
+        start_at = element.at_css(config[0]).attr(config[1])
+        if !config[2].nil?
+          start_at = start_at.split(config[2])
+          start_at = start_at[start_at.length - 1]
+        end
+      end
+
+      start_at = parse_date( start_at, title, url )
+      end_at = start_at
+      @events << { url: url, start_at: start_at, end_at: end_at, title: title }
+    end
 
     return true
   rescue StandardError => error
@@ -79,11 +118,20 @@ class CrawlerWorker
     text = text.gsub url,''
 
     DateTime.parse(text)
+  rescue StandardError => error
+    Rails.logger.error error.message
+    Rails.logger.error error.backtrace.join("\n")
+
+    nil
   end
 
   def persist
     @events.each do |candidate|
-      url = @source.url + candidate[:url]
+
+      url = candidate[:url]
+      if !url.include? "http"
+        url = @source.url + candidate[:url]
+      end
 
       # Check existence
       if Event.find_by_url(url) == nil
@@ -97,6 +145,12 @@ class CrawlerWorker
       end
     end
 
+  end
+
+  def time_split(time_start, time_end)
+    seconds = ((time_end - time_start)).round
+    minutes = ((time_end - time_start) / 60).round
+    [minutes, seconds]
   end
 
 end
