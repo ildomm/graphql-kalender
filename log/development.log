@@ -13751,3 +13751,239 @@ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/exec
   [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
   [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-12-21 00:00:00"], ["end_at", "2019-12-21 00:00:00"], ["title", "A TALE OF GOLDEN KEYES"], ["url", "http://berghain.de/event/2947"], ["created_at", "2019-07-28 21:09:09.382480"], ["updated_at", "2019-07-28 21:09:09.382480"]]
   [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 698020ms (Views: 18.7ms | ActiveRecord: 151.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-07-28 18:13:29 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/graphiql" for 127.0.0.1 at 2019-07-28 18:13:30 -0300
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb (1713.6ms)
+Completed 200 OK in 1747ms (Views: 1729.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:13:32 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 601ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:13:35 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, filter: { startAtAfter: \"2019-08-05\"}) {\n  id\n} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, filter: { startAtAfter: \"2019-08-05\"}) {\n  id\n} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE (start_at >= '2019-08-05') ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 61ms (Views: 1.1ms | ActiveRecord: 11.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:13:45 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, filter: { startAtAfter: \"2019-08-05\"}) {\n  id,\n  url\n} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, filter: { startAtAfter: \"2019-08-05\"}) {\n  id,\n  url\n} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE (start_at >= '2019-08-05') ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 23ms (Views: 1.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:13:55 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, filter: { startAtAfter: \"2019-08-05\"}) {\n  id,\n  url,\n  title\n  \n} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, filter: { startAtAfter: \"2019-08-05\"}) {\n  id,\n  url,\n  title\n  \n} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE (start_at >= '2019-08-05') ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 33ms (Views: 2.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:14:02 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, filter: { startAtAfter: \"2019-08-05\"}) {\n  id,\n  url,\n  title,\n  startAt\n  \n} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, filter: { startAtAfter: \"2019-08-05\"}) {\n  id,\n  url,\n  title,\n  startAt\n  \n} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE (start_at >= '2019-08-05') ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 44ms (Views: 2.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:23:46 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, filter: { title_contains: \"ga\"}) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, filter: { title_contains: \"ga\"}) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:23:55 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, filter: { titleContains: \"ga\"}) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, filter: { titleContains: \"ga\"}) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (3.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE (title LIKE '%ga%') ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 26ms (Views: 1.7ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:24:00 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, filter: { titleContains: \"G\"}) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, filter: { titleContains: \"G\"}) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE (title LIKE '%G%') ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 54ms (Views: 5.6ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:24:10 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, filter: { titleContains: \"Golden\"}) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, filter: { titleContains: \"Golden\"}) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE (title LIKE '%Golden%') ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:24:16 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, filter: { titleContains: \"GOLDEN\"}) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, filter: { titleContains: \"GOLDEN\"}) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE (title LIKE '%GOLDEN%') ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:24:35 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, filter: { titleContains: \"The\"}) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, filter: { titleContains: \"The\"}) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE (title LIKE '%The%') ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 27ms (Views: 1.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:33:53 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, filter: { titleContains: \"The\"}, OR: { titleContains: \"The\"} ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, filter: { titleContains: \"The\"}, OR: { titleContains: \"The\"} ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+Completed 200 OK in 78ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:34:12 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, filter: { titleContains: \"The\" , OR: { titleContains: \"The\"} } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, filter: { titleContains: \"The\" , OR: { titleContains: \"The\"} } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE (title LIKE '%The%') ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 53ms (Views: 1.1ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:34:19 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, filter: { titleContains: \"The\" , OR: titleContains: \"The\" } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, filter: { titleContains: \"The\" , OR: titleContains: \"The\" } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:34:38 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: { titleContains: \"G\"}} ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: { titleContains: \"G\"}} ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE ((title LIKE '%The%') OR (title LIKE '%G%')) ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 37ms (Views: 2.0ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:34:56 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: ( { titleContains: \"G\" } ) } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: ( { titleContains: \"G\" } ) } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:35:05 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: { { titleContains: \"G\" } } ) } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: { { titleContains: \"G\" } } ) } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:35:19 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: { titleContains: \"G\" } } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: { titleContains: \"G\" } } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE ((title LIKE '%The%') OR (title LIKE '%G%')) ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 39ms (Views: 1.6ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:35:35 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: titleContains: \"G\" \n            } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: titleContains: \"G\" \n            } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:35:49 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { { titleContains: \"The\", } \n                OR: titleContains: \"G\" \n            } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { { titleContains: \"The\", } \n                OR: titleContains: \"G\" \n            } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:35:55 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { { titleContains: \"The\", } \n                OR: { titleContains: \"G\"  }\n            } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { { titleContains: \"The\", } \n                OR: { titleContains: \"G\"  }\n            } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:36:02 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: { titleContains: \"G\" } } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: { titleContains: \"G\" } } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE ((title LIKE '%The%') OR (title LIKE '%G%')) ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 36ms (Views: 1.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:36:25 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                AND: { titleContains: \"G\" },  } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                AND: { titleContains: \"G\" },  } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE ((title LIKE '%The%') OR (title LIKE '%G%')) ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 41ms (Views: 2.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:36:42 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"cccc\" , \n                AND: { titleContains: \"G\" },  } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"cccc\" , \n                AND: { titleContains: \"G\" },  } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE ((title LIKE '%cccc%') OR (title LIKE '%G%')) ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 45ms (Views: 1.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:37:13 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"cccc\" , \n                AND: { urlContains: \"G\" },  } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"cccc\" , \n                AND: { urlContains: \"G\" },  } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE ((title LIKE '%cccc%') OR (url LIKE '%G%')) ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:37:17 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"cccc\" , \n                AND: { urlContains: \"b\" },  } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"cccc\" , \n                AND: { urlContains: \"b\" },  } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE ((title LIKE '%cccc%') OR (url LIKE '%b%')) ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 37ms (Views: 1.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:37:40 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: { urlContains: \"b\" },  } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: { urlContains: \"b\" },  } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE ((title LIKE '%The%') OR (url LIKE '%b%')) ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 38ms (Views: 1.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:37:52 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: { urlContains: \"29\" },  } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10, \n            filter: { titleContains: \"The\" , \n                OR: { urlContains: \"29\" },  } ) {\n  id,\n  url,\n  title,\n  startAt\n\t} \n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE ((title LIKE '%The%') OR (url LIKE '%29%')) ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+Completed 200 OK in 39ms (Views: 1.6ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:38:36 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10 ) {\n    id\n    url\n    createdAt\n    postedBy {\n      id\n      name\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10 ) {\n    id\n    url\n    createdAt\n    postedBy {\n      id\n      name\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+  [1m[36mSource Load (1.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.1ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 252ms (Views: 2.5ms | ActiveRecord: 15.1ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-07-28 18:38:41 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{ allEvents(first: 10 ) {\n    id\n    url\n    createdAt\n    postedBy {\n      name\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"{ allEvents(first: 10 ) {\n    id\n    url\n    createdAt\n    postedBy {\n      name\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 10]]
+  [1m[36mSource Load (1.2ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.1ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.1ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.1ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Source Load (0.0ms)[0m  [1m[34mSELECT  "sources".* FROM "sources" WHERE "sources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 74ms (Views: 1.9ms | ActiveRecord: 3.5ms)
+
+

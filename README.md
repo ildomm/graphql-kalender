@@ -43,30 +43,41 @@ open http://localhost:3000/
 
 ## Sample GraphQL Queries
 
-List first 10 links, containing "example":
+List first 10 events:
 
 ```graphql
-{
-  allLinks(first: 10, filter: {descriptionContains: "example"}) {
+{ allEvents(first: 10 ) {
     id
     url
-    description
     createdAt
     postedBy {
-      id
       name
     }
   }
 }
 
-{
-  allEvents(first: 10 ) {
-    id
-    url
-    createdAt
-    postedBy {
-      id
-      name
-    }
-  }
+{ allEvents(first: 10, filter: { titleContains: "The"}) {
+  id,
+  url,
+  title,
+  startAt
+  } 
+}
+
+{ allEvents(first: 10, filter: { startAtAfter: "2019-08-05"}) {
+  id,
+  url,
+  title,
+  startAt
+  } 
+}
+
+{ allEvents(first: 10, 
+            filter: { titleContains: "The" , 
+                OR: { urlContains: "29" },  } ) {
+  id,
+  url,
+  title,
+  startAt
+  } 
 }

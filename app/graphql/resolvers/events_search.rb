@@ -42,7 +42,6 @@ class Resolvers::EventsSearch
     branches << scope
 
     value[:OR].reduce(branches) { |s, v| normalize_filters(v, s) } if value[:OR].present?
-    value[:AND].reduce(branches) { |s, v| normalize_filters(v, s) } if value[:AND].present?
 
     branches
   end

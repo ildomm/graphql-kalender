@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_204410) do
     t.datetime "start_at", null: false
     t.datetime "end_at", null: false
     t.string "title", null: false
-    t.string "url", null: false
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["end_at"], name: "index_events_on_end_at"
@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(version: 2019_07_25_204410) do
 
   create_table "sources", force: :cascade do |t|
     t.string "name", null: false
-    t.string "url", null: false
+    t.string "url"
     t.string "config", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["url"], name: "index_sources_on_url", unique: true
+    t.index ["url"], name: "index_sources_on_url"
   end
 
   add_foreign_key "events", "sources"
