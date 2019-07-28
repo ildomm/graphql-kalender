@@ -169,6 +169,7 @@ GEM
     validate_url (1.0.2)
       activemodel (>= 3.0.0)
       addressable
+    wdm (0.1.1)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -195,12 +196,14 @@ DEPENDENCIES
   rack-cors
   rails (~> 5.2.0)
   rubocop
+  ruby_dep (~> 1.4)
   search_object
   search_object_graphql
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
   validate_url
+  wdm (>= 0.1.0)
   web-console (>= 3.3.0)
 
 BUNDLED WITH

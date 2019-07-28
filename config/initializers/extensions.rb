@@ -1,0 +1,1 @@
+Dir["#{Rails.root}/lib/crawler/*.rb"].each { |file| require file }

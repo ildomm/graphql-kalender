@@ -1,5 +1,6 @@
 module Types
   class EventType < BaseNode
+    field :id, ID, null: false
     field :created_at, DateTimeType, null: false
     field :start_at, DateTimeType, null: false
     field :end_at, DateTimeType, null: false

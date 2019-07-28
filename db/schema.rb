@@ -29,15 +29,6 @@ ActiveRecord::Schema.define(version: 2019_07_25_204410) do
     t.index ["title"], name: "index_events_on_title"
   end
 
-  create_table "links", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "url", null: false
-    t.string "description", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_links_on_user_id"
-  end
-
   create_table "sources", force: :cascade do |t|
     t.string "name", null: false
     t.string "url", null: false
@@ -46,27 +37,5 @@ ActiveRecord::Schema.define(version: 2019_07_25_204410) do
     t.index ["url"], name: "index_sources_on_url", unique: true
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "email", null: false
-    t.string "password_digest", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-  end
-
-  create_table "votes", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "link_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["link_id"], name: "index_votes_on_link_id"
-    t.index ["user_id", "link_id"], name: "index_votes_on_user_id_and_link_id", unique: true
-    t.index ["user_id"], name: "index_votes_on_user_id"
-  end
-
   add_foreign_key "events", "sources"
-  add_foreign_key "links", "users"
-  add_foreign_key "votes", "links"
-  add_foreign_key "votes", "users"
 end

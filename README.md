@@ -52,3 +52,15 @@ List first 10 links, containing "example":
     }
   }
 }
+
+{
+  allEvents(first: 10 ) {
+    id
+    url
+    createdAt
+    postedBy {
+      id
+      name
+    }
+  }
+}

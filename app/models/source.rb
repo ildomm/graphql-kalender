@@ -1,6 +1,4 @@
 class Source < ActiveRecord::Base
-  has_secure_password
-
   has_many :events, dependent: :destroy
 
   validates :name, presence: true, length: { minimum: 3 }

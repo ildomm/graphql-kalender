@@ -5,12 +5,15 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'ruby_dep', '~> 1.4', require: 'ruby_dep/quiet'
+
 gem 'bcrypt', '~> 3.1.7'
 gem 'puma', '~> 3.7'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 5.2.0'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'validate_url'
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 gem 'graphql'
 gem 'graphql-query-resolver'
