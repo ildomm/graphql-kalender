@@ -8,6 +8,22 @@ class GraphqlController < ApplicationController
     handle_error_in_development e
   end
 
+  def task
+    # Dir["#{Rails.root}/app/workers/*.rb"].each do |file|
+    #   require file
+    # end
+    #
+    Dir["#{Rails.root}/app/workers/*.rb"].each do |file|
+      puts file
+      #require file
+    end
+
+    worker = SiteWorker.new
+    worker.perform
+
+    render plain: "ok"
+  end
+
   private
 
   def query
