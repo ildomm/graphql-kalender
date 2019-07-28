@@ -11,8 +11,8 @@ module Graphqlkalendar
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
-    config.autoload_paths.push(*%W[#{config.root}/app/workers/])
-    config.autoload_paths = config.eager_load_paths.dup
+    #config.autoload_paths.push(*%W[#{config.root}/app/workers/])
+    #config.autoload_paths = config.eager_load_paths.dup
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

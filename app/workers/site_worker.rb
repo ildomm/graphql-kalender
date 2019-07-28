@@ -1,6 +1,7 @@
 class SiteWorker
 
-  def perform
+  def perform( has_to_wait )
+    @has_to_wait = has_to_wait
     sources.each do |source|
       urls = format_urls(source)
       invoke_crawler(source, urls)
@@ -31,10 +32,11 @@ class SiteWorker
 
     pool = Concurrent::FixedThreadPool.new(2)
     errors = Concurrent::Array.new
+    crawler = CrawlerWorker.new
+
     urls.each do |url|
       Concurrent::Future.execute({ executor: pool }) do
         begin
-          crawler = CrawlerWorker.new
           crawler.perform(source, url)
         rescue StandardError => e
           errors << e
@@ -42,15 +44,10 @@ class SiteWorker
       end
     end
 
-    # puts pool.running?
-    # while pool.running?
-    #   puts "waiting"
-    #   if errors.any?
-    #     pool.kill
-    #     fail errors.first
-    #   end
-    #   sleep 10
-    # end
+    if @has_to_wait
+      pool.shutdown
+      pool.wait_for_termination
+    end
 
     puts "Pool done"
   end

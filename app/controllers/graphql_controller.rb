@@ -9,17 +9,8 @@ class GraphqlController < ApplicationController
   end
 
   def task
-    # Dir["#{Rails.root}/app/workers/*.rb"].each do |file|
-    #   require file
-    # end
-    #
-    Dir["#{Rails.root}/app/workers/*.rb"].each do |file|
-      puts file
-      #require file
-    end
-
     worker = SiteWorker.new
-    worker.perform
+    worker.perform(false)
 
     render plain: "ok"
   end

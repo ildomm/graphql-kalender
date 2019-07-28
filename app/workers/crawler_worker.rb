@@ -15,7 +15,9 @@ class CrawlerWorker
   # TODO: define worker logger
 
   def perform(source, url)
+    puts "Processing url: #{@source.name} | #{@url}"
     time_start = Time.now
+
     @source = source
     @url = url
     @events = []
@@ -31,9 +33,6 @@ class CrawlerWorker
     puts "url: #{@url} events: #{@events.length}"
 
     persist
-
-    sleep rand(3)
-    puts "Processing url: #{@source.name} | #{@url}"
 
     minutes, seconds = TimeSplitter.call(time_start, Time.now)
     puts "Execution time: #{minutes} minutes, #{seconds} seconds"
@@ -88,7 +87,7 @@ class CrawlerWorker
 
       # Check existence
       if Event.find_by_url(url) == nil
-        Event.create(
+        Event.create!(
             source: @source,
             url: url,
             start_at: candidate[:start_at],
