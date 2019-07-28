@@ -5,7 +5,7 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.string :name, null: false
       t.string :url, null: true
       t.string :config, null: false
-      t.index :url, unique: false
+      t.index :url, unique: true
       t.timestamps
     end
 
@@ -15,6 +15,7 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.datetime :end_at, null: false
       t.string :title, null: false
       t.string :url, null: true
+      t.index :url, unique: true
       t.index :start_at, unique: false
       t.index :end_at, unique: false
       t.index :title, unique: false

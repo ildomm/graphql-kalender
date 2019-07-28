@@ -32,7 +32,7 @@ class CrawlerWorker
       return
     end
 
-    puts "url: #{@url} events: #{@events.length}"
+    puts "url: #{@url}, size: #{@content.length}, events: #{@events.length}"
 
     # Database step
     persist
@@ -65,8 +65,6 @@ class CrawlerWorker
     unless contents
       return
     end
-
-    puts "url: #{@url} size #{@content.length}"
 
     page = Nokogiri::HTML(@content)
 

@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_204410) do
     t.index ["source_id"], name: "index_events_on_source_id"
     t.index ["start_at"], name: "index_events_on_start_at"
     t.index ["title"], name: "index_events_on_title"
+    t.index ["url"], name: "index_events_on_url", unique: true
   end
 
   create_table "sources", force: :cascade do |t|
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_204410) do
     t.string "config", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["url"], name: "index_sources_on_url"
+    t.index ["url"], name: "index_sources_on_url", unique: true
   end
 
   add_foreign_key "events", "sources"

@@ -26,7 +26,7 @@ class SiteWorker
     current_time = Time.new
     config = JSON.parse(source.config)
 
-    # A year from now
+    # A year from now only
     12.times do |index|
       urls << source.url + current_time.strftime(config['page_format'])
       current_time = current_time + 1.month
@@ -36,7 +36,7 @@ class SiteWorker
 
   def invoke_crawler(source, urls)
 
-    pool = Concurrent::FixedThreadPool.new(2)
+    pool = Concurrent::FixedThreadPool.new(3)
     errors = Concurrent::Array.new
     crawler = CrawlerWorker.new
 
@@ -55,7 +55,10 @@ class SiteWorker
       pool.wait_for_termination
     end
 
-    puts "Pool done"
+    if errors.size > 0
+      puts errors.inspect
+    end
+
   end
 
 end

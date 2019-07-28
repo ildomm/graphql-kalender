@@ -8,15 +8,6 @@ class GraphqlController < ApplicationController
     handle_error_in_development e
   end
 
-  # DEBUG thing
-  # def task
-  #
-  #   worker = SiteWorker.new
-  #   worker.perform(false)
-  #
-  #   render plain: "ok"
-  # end
-
   private
 
   def query
