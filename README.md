@@ -29,6 +29,12 @@ Starting the server:
 rails server
 ```
 
+Importing events:
+
+```
+rake explore:go
+```
+
 Opening the application:
 
 ```

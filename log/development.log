@@ -12440,3 +12440,1314 @@ Processing by GraphqlController#task as HTML
   [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/alles-schwindel/2019-09-28-1900"], ["LIMIT", 1]]
   [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/anna-karenina-oder-arme-leute/2019-09-29-1800"], ["LIMIT", 1]]
   [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/small-town-boy/2019-09-30-1900"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "sources"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de2"], ["LIMIT", 1]]
+  [1m[36mSource Create (1.4ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "created_at", "updated_at", "config") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "gorki"], ["url", "https://gorki.de2"], ["created_at", "2019-07-28 21:06:34.814746"], ["updated_at", "2019-07-28 21:06:34.814746"], ["config", "{\"page_format\":\"/en/programme/%Y/%m/all\",\"driver\":\"nokogiri\",\"xpath\":\"//*[@id=\\\"block-gorki-content\\\"]/div[1]/*\",\"url\":\"a|href\",\"title\":\"a|title\",\"dates\":\"a|href|/\"}"]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de2"], ["LIMIT", 1]]
+  [1m[36mSource Create (1.5ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "created_at", "updated_at", "config") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "gorki"], ["url", "https://gorki.de2"], ["created_at", "2019-07-28 21:07:10.623400"], ["updated_at", "2019-07-28 21:07:10.623400"], ["config", "{\"page_format\":\"/en/programme/%Y/%m/all\",\"driver\":\"nokogiri\",\"xpath\":\"//*[@id=\\\"block-gorki-content\\\"]/div[1]/*\",\"url\":\"a|href\",\"title\":\"a|title\",\"dates\":\"a|href|/\"}"]]
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de2"], ["LIMIT", 1]]
+  [1m[36mSource Create (1.3ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "created_at", "updated_at", "config") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "gorki"], ["url", "https://gorki.de2"], ["created_at", "2019-07-28 21:07:31.209853"], ["updated_at", "2019-07-28 21:07:31.209853"], ["config", "{\"page_format\":\"/en/programme/%Y/%m/all\",\"driver\":\"nokogiri\",\"xpath\":\"//*[@id=\\\"block-gorki-content\\\"]/div[1]/*\",\"url\":\"a|href\",\"title\":\"a|title\",\"dates\":\"a|href|/\"}"]]
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de2"], ["LIMIT", 1]]
+  [1m[36mSource Create (0.7ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "created_at", "updated_at", "config") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "berglain"], ["url", "http://berghain.de2"], ["created_at", "2019-07-28 21:07:31.221133"], ["updated_at", "2019-07-28 21:07:31.221133"], ["config", "{\"page_format\":\"/events/%Y-%m\",\"driver\":\"nokogiri\",\"xpath\":\"//h4\",\"url\":\"a|href\",\"title\":\"a|span\",\"dates\":\"a\"}"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSource Load (0.9ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+Failed to open TCP connection to gorki.de2:443 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to gorki.de2:443 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to gorki.de2:443 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to gorki.de2:443 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to gorki.de2:443 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to gorki.de2:443 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to gorki.de2:443 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to gorki.de2:443 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to gorki.de2:443 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to gorki.de2:443 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to gorki.de2:443 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to gorki.de2:443 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to berghain.de2:80 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to berghain.de2:80 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to berghain.de2:80 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to berghain.de2:80 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to berghain.de2:80 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to berghain.de2:80 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to berghain.de2:80 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to berghain.de2:80 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to berghain.de2:80 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to berghain.de2:80 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to berghain.de2:80 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Failed to open TCP connection to berghain.de2:80 (getaddrinfo: No such host is known. )
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:949:in `rescue in block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:946:in `block in connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:93:in `block in timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/timeout.rb:103:in `timeout'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:945:in `connect'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:930:in `do_start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:919:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:605:in `start'
+C:/Ruby26-x64/lib/ruby/2.6.0/net/http.rb:481:in `get_response'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:55:in `contents'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:65:in `extract_with_nokogiri'
+C:/devel/Ruby/graphql-kalender/app/workers/crawler_worker.rb:28:in `perform'
+C:/devel/Ruby/graphql-kalender/app/workers/site_worker.rb:46:in `block (2 levels) in invoke_crawler'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/safe_task_executor.rb:19:in `execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/ivar.rb:169:in `safe_execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/future.rb:55:in `block in execute'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "sources"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de"], ["LIMIT", 1]]
+  [1m[36mSource Create (0.9ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "created_at", "updated_at", "config") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "gorki"], ["url", "https://gorki.de"], ["created_at", "2019-07-28 21:08:49.013461"], ["updated_at", "2019-07-28 21:08:49.013461"], ["config", "{\"page_format\":\"/en/programme/%Y/%m/all\",\"driver\":\"nokogiri\",\"xpath\":\"//*[@id=\\\"block-gorki-content\\\"]/div[1]/*\",\"url\":\"a|href\",\"title\":\"a|title\",\"dates\":\"a|href|/\"}"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de"], ["LIMIT", 1]]
+  [1m[36mSource Create (0.8ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "created_at", "updated_at", "config") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "berglain"], ["url", "http://berghain.de"], ["created_at", "2019-07-28 21:08:49.020624"], ["updated_at", "2019-07-28 21:08:49.020624"], ["config", "{\"page_format\":\"/events/%Y-%m\",\"driver\":\"nokogiri\",\"xpath\":\"//h4\",\"url\":\"a|href\",\"title\":\"a|span\",\"dates\":\"a\"}"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSource Load (0.9ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/es-sagt-mir-nichts-das-sogenannte-draussen/2019-08-03-2000"], ["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-08-03 00:00:00"], ["end_at", "2019-08-03 00:00:00"], ["title", "Gastspiel in Venedig: Es sagt mir nichts, das sogenannte Draußen"], ["url", "https://gorki.de/es-sagt-mir-nichts-das-sogenannte-draussen/2019-08-03-2000"], ["created_at", "2019-07-28 21:08:59.695481"], ["updated_at", "2019-07-28 21:08:59.695481"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/die-hamletmaschine/2019-08-04-2000"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-08-04 00:00:00"], ["end_at", "2019-08-04 00:00:00"], ["title", "Gastspiel in Venedig: Die Hamletmaschine"], ["url", "https://gorki.de/die-hamletmaschine/2019-08-04-2000"], ["created_at", "2019-07-28 21:08:59.706256"], ["updated_at", "2019-07-28 21:08:59.706256"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/herzstuck/2019-08-16-2000"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-08-16 00:00:00"], ["end_at", "2019-08-16 00:00:00"], ["title", "Voraufführung: Herzstück"], ["url", "https://gorki.de/herzstuck/2019-08-16-2000"], ["created_at", "2019-07-28 21:08:59.714423"], ["updated_at", "2019-07-28 21:08:59.714423"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/fest-zur-spielzeiteroffnung/2019-08-17-1800"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-08-17 00:00:00"], ["end_at", "2019-08-17 00:00:00"], ["title", "Fest zur Spielzeiteröffnung"], ["url", "https://gorki.de/fest-zur-spielzeiteroffnung/2019-08-17-1800"], ["created_at", "2019-07-28 21:08:59.721859"], ["updated_at", "2019-07-28 21:08:59.721859"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/herzstuck/2019-08-18-2000"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-08-18 00:00:00"], ["end_at", "2019-08-18 00:00:00"], ["title", "Herzstück"], ["url", "https://gorki.de/herzstuck/2019-08-18-2000"], ["created_at", "2019-07-28 21:08:59.729152"], ["updated_at", "2019-07-28 21:08:59.729152"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/herzstuck/2019-08-19-2000"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-08-19 00:00:00"], ["end_at", "2019-08-19 00:00:00"], ["title", "Herzstück"], ["url", "https://gorki.de/herzstuck/2019-08-19-2000"], ["created_at", "2019-07-28 21:08:59.735860"], ["updated_at", "2019-07-28 21:08:59.735860"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/herzstuck/2019-08-20-2000"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-08-20 00:00:00"], ["end_at", "2019-08-20 00:00:00"], ["title", "Theatertag: Herzstück"], ["url", "https://gorki.de/herzstuck/2019-08-20-2000"], ["created_at", "2019-07-28 21:08:59.742724"], ["updated_at", "2019-07-28 21:08:59.742724"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/herzstuck/2019-08-21-2000"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-08-21 00:00:00"], ["end_at", "2019-08-21 00:00:00"], ["title", "Herzstück"], ["url", "https://gorki.de/herzstuck/2019-08-21-2000"], ["created_at", "2019-07-28 21:08:59.749370"], ["updated_at", "2019-07-28 21:08:59.749370"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/the-sequel/2019-08-24-2000"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-08-24 00:00:00"], ["end_at", "2019-08-24 00:00:00"], ["title", "The Sequel"], ["url", "https://gorki.de/the-sequel/2019-08-24-2000"], ["created_at", "2019-07-28 21:08:59.755294"], ["updated_at", "2019-07-28 21:08:59.755294"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/the-sequel/2019-08-25-2000"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-08-25 00:00:00"], ["end_at", "2019-08-25 00:00:00"], ["title", "The Sequel"], ["url", "https://gorki.de/the-sequel/2019-08-25-2000"], ["created_at", "2019-07-28 21:08:59.762439"], ["updated_at", "2019-07-28 21:08:59.762439"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/die-verlobung-in-st-domingo-ein-widerspruch/2019-08-30-2000"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-08-30 00:00:00"], ["end_at", "2019-08-30 00:00:00"], ["title", "Berliner Premiere: Die Verlobung in St. Domingo – Ein Widerspruch"], ["url", "https://gorki.de/die-verlobung-in-st-domingo-ein-widerspruch/2019-08-30-2000"], ["created_at", "2019-07-28 21:08:59.768584"], ["updated_at", "2019-07-28 21:08:59.768584"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/die-verlobung-in-st-domingo-ein-widerspruch/2019-08-31-2000"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-08-31 00:00:00"], ["end_at", "2019-08-31 00:00:00"], ["title", "Die Verlobung in St. Domingo – Ein Widerspruch"], ["url", "https://gorki.de/die-verlobung-in-st-domingo-ein-widerspruch/2019-08-31-2000"], ["created_at", "2019-07-28 21:08:59.774369"], ["updated_at", "2019-07-28 21:08:59.774369"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/herzstuck/2019-09-01-2000"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.1ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-01 00:00:00"], ["end_at", "2019-09-01 00:00:00"], ["title", "Herzstück"], ["url", "https://gorki.de/herzstuck/2019-09-01-2000"], ["created_at", "2019-07-28 21:09:00.981018"], ["updated_at", "2019-07-28 21:09:00.981018"]]
+  [1m[35m (11.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/philipp-ruch-zentrum-fur-politische-schonheit-buchprasentation-wir-mussen-handeln/2019-09-02-2000"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (3.5ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-02 00:00:00"], ["end_at", "2019-09-02 00:00:00"], ["title", "Philipp Ruch (Zentrum für Politische Schönheit) – Buchpräsentation: Wir müssen handeln"], ["url", "https://gorki.de/philipp-ruch-zentrum-fur-politische-schonheit-buchprasentation-wir-mussen-handeln/2019-09-02-2000"], ["created_at", "2019-07-28 21:09:00.999778"], ["updated_at", "2019-07-28 21:09:00.999778"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/elizaveta-bam/2019-09-05-2000"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-05 00:00:00"], ["end_at", "2019-09-05 00:00:00"], ["title", "Elizaveta Bam\t"], ["url", "https://gorki.de/elizaveta-bam/2019-09-05-2000"], ["created_at", "2019-07-28 21:09:01.010135"], ["updated_at", "2019-07-28 21:09:01.010135"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/common-ground/2019-09-06-1900"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-06 00:00:00"], ["end_at", "2019-09-06 00:00:00"], ["title", "Common Ground"], ["url", "https://gorki.de/common-ground/2019-09-06-1900"], ["created_at", "2019-07-28 21:09:01.016440"], ["updated_at", "2019-07-28 21:09:01.016440"]]
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/jugend-ohne-gott/2019-09-07-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-07 00:00:00"], ["end_at", "2019-09-07 00:00:00"], ["title", "Jugend ohne Gott"], ["url", "https://gorki.de/jugend-ohne-gott/2019-09-07-1900"], ["created_at", "2019-07-28 21:09:01.028799"], ["updated_at", "2019-07-28 21:09:01.028799"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/roma-armee/2019-09-08-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-08 00:00:00"], ["end_at", "2019-09-08 00:00:00"], ["title", "Roma Armee"], ["url", "https://gorki.de/roma-armee/2019-09-08-1900"], ["created_at", "2019-07-28 21:09:01.034513"], ["updated_at", "2019-07-28 21:09:01.034513"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/storen/2019-09-10-2000"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-10 00:00:00"], ["end_at", "2019-09-10 00:00:00"], ["title", "Stören"], ["url", "https://gorki.de/storen/2019-09-10-2000"], ["created_at", "2019-07-28 21:09:01.039958"], ["updated_at", "2019-07-28 21:09:01.039958"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/storen/2019-09-11-2000"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-11 00:00:00"], ["end_at", "2019-09-11 00:00:00"], ["title", "Stören"], ["url", "https://gorki.de/storen/2019-09-11-2000"], ["created_at", "2019-07-28 21:09:01.046505"], ["updated_at", "2019-07-28 21:09:01.046505"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/roma-armee/2019-09-12-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-12 00:00:00"], ["end_at", "2019-09-12 00:00:00"], ["title", "Roma Armee"], ["url", "https://gorki.de/roma-armee/2019-09-12-1900"], ["created_at", "2019-07-28 21:09:01.051940"], ["updated_at", "2019-07-28 21:09:01.051940"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/berliner-korrespondenzen-offene-horizonte-in-zeiten-der-abschottung/2019-09-13-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-13 00:00:00"], ["end_at", "2019-09-13 00:00:00"], ["title", "Berliner Korrespondenzen: Offene Horizonte in Zeiten der Abschottung"], ["url", "https://gorki.de/berliner-korrespondenzen-offene-horizonte-in-zeiten-der-abschottung/2019-09-13-1900"], ["created_at", "2019-07-28 21:09:01.057448"], ["updated_at", "2019-07-28 21:09:01.057448"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/anna-karenina-oder-arme-leute/2019-09-14-1900"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-14 00:00:00"], ["end_at", "2019-09-14 00:00:00"], ["title", "Voraufführung: Anna Karenina oder Arme Leute"], ["url", "https://gorki.de/anna-karenina-oder-arme-leute/2019-09-14-1900"], ["created_at", "2019-07-28 21:09:01.064055"], ["updated_at", "2019-07-28 21:09:01.064055"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/anna-karenina-oder-arme-leute/2019-09-15-1800"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-15 00:00:00"], ["end_at", "2019-09-15 00:00:00"], ["title", "Premiere: Anna Karenina oder Arme Leute"], ["url", "https://gorki.de/anna-karenina-oder-arme-leute/2019-09-15-1800"], ["created_at", "2019-07-28 21:09:01.069872"], ["updated_at", "2019-07-28 21:09:01.069872"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/jugend-ohne-gott/2019-09-16-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-16 00:00:00"], ["end_at", "2019-09-16 00:00:00"], ["title", "Jugend ohne Gott"], ["url", "https://gorki.de/jugend-ohne-gott/2019-09-16-1900"], ["created_at", "2019-07-28 21:09:01.075331"], ["updated_at", "2019-07-28 21:09:01.075331"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/third-generation-next-generation/2019-09-17-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-17 00:00:00"], ["end_at", "2019-09-17 00:00:00"], ["title", "Third Generation – Next Generation"], ["url", "https://gorki.de/third-generation-next-generation/2019-09-17-1900"], ["created_at", "2019-07-28 21:09:01.080927"], ["updated_at", "2019-07-28 21:09:01.080927"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/third-generation-next-generation/2019-09-18-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-18 00:00:00"], ["end_at", "2019-09-18 00:00:00"], ["title", "Third Generation – Next Generation"], ["url", "https://gorki.de/third-generation-next-generation/2019-09-18-1900"], ["created_at", "2019-07-28 21:09:01.086963"], ["updated_at", "2019-07-28 21:09:01.086963"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/third-generation-next-generation/2019-09-19-1900"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-19 00:00:00"], ["end_at", "2019-09-19 00:00:00"], ["title", "Third Generation – Next Generation"], ["url", "https://gorki.de/third-generation-next-generation/2019-09-19-1900"], ["created_at", "2019-07-28 21:09:01.093324"], ["updated_at", "2019-07-28 21:09:01.093324"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/anna-karenina-oder-arme-leute/2019-09-20-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-20 00:00:00"], ["end_at", "2019-09-20 00:00:00"], ["title", "Anna Karenina oder Arme Leute"], ["url", "https://gorki.de/anna-karenina-oder-arme-leute/2019-09-20-1900"], ["created_at", "2019-07-28 21:09:01.098826"], ["updated_at", "2019-07-28 21:09:01.098826"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/ein-bericht-fur-eine-akademie/2019-09-21-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-21 00:00:00"], ["end_at", "2019-09-21 00:00:00"], ["title", "Ein Bericht für eine Akademie"], ["url", "https://gorki.de/ein-bericht-fur-eine-akademie/2019-09-21-1900"], ["created_at", "2019-07-28 21:09:01.104080"], ["updated_at", "2019-07-28 21:09:01.104080"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/ein-bericht-fur-eine-akademie/2019-09-22-1800"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-22 00:00:00"], ["end_at", "2019-09-22 00:00:00"], ["title", "Ein Bericht für eine Akademie"], ["url", "https://gorki.de/ein-bericht-fur-eine-akademie/2019-09-22-1800"], ["created_at", "2019-07-28 21:09:01.109635"], ["updated_at", "2019-07-28 21:09:01.109635"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/the-situation/2019-09-23-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-23 00:00:00"], ["end_at", "2019-09-23 00:00:00"], ["title", "The Situation"], ["url", "https://gorki.de/the-situation/2019-09-23-1900"], ["created_at", "2019-07-28 21:09:01.115207"], ["updated_at", "2019-07-28 21:09:01.115207"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/a-walk-on-the-dark-side/2019-09-24-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-24 00:00:00"], ["end_at", "2019-09-24 00:00:00"], ["title", "Theatertag: A Walk on the Dark Side"], ["url", "https://gorki.de/a-walk-on-the-dark-side/2019-09-24-1900"], ["created_at", "2019-07-28 21:09:01.121345"], ["updated_at", "2019-07-28 21:09:01.121345"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/ausser-sich/2019-09-25-1900"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-25 00:00:00"], ["end_at", "2019-09-25 00:00:00"], ["title", "AUSSER SICH"], ["url", "https://gorki.de/ausser-sich/2019-09-25-1900"], ["created_at", "2019-07-28 21:09:01.127123"], ["updated_at", "2019-07-28 21:09:01.127123"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/die-nacht-von-lissabon/2019-09-26-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-26 00:00:00"], ["end_at", "2019-09-26 00:00:00"], ["title", "Die Nacht von Lissabon"], ["url", "https://gorki.de/die-nacht-von-lissabon/2019-09-26-1900"], ["created_at", "2019-07-28 21:09:01.132864"], ["updated_at", "2019-07-28 21:09:01.132864"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/anna-karenina-oder-arme-leute/2019-09-27-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-27 00:00:00"], ["end_at", "2019-09-27 00:00:00"], ["title", "Anna Karenina oder Arme Leute"], ["url", "https://gorki.de/anna-karenina-oder-arme-leute/2019-09-27-1900"], ["created_at", "2019-07-28 21:09:01.138219"], ["updated_at", "2019-07-28 21:09:01.138219"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/alles-schwindel/2019-09-28-1900"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-28 00:00:00"], ["end_at", "2019-09-28 00:00:00"], ["title", "Alles Schwindel"], ["url", "https://gorki.de/alles-schwindel/2019-09-28-1900"], ["created_at", "2019-07-28 21:09:01.143978"], ["updated_at", "2019-07-28 21:09:01.143978"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/anna-karenina-oder-arme-leute/2019-09-29-1800"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-29 00:00:00"], ["end_at", "2019-09-29 00:00:00"], ["title", "Anna Karenina oder Arme Leute"], ["url", "https://gorki.de/anna-karenina-oder-arme-leute/2019-09-29-1800"], ["created_at", "2019-07-28 21:09:01.150009"], ["updated_at", "2019-07-28 21:09:01.150009"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "https://gorki.de/small-town-boy/2019-09-30-1900"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "https://gorki.de"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2019-09-30 00:00:00"], ["end_at", "2019-09-30 00:00:00"], ["title", "Small Town Boy"], ["url", "https://gorki.de/small-town-boy/2019-09-30-1900"], ["created_at", "2019-07-28 21:09:01.155711"], ["updated_at", "2019-07-28 21:09:01.155711"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2842"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-01 00:00:00"], ["end_at", "2019-07-01 00:00:00"], ["title", "AMBER MARK"], ["url", "http://berghain.de/event/2842"], ["created_at", "2019-07-28 21:09:06.311436"], ["updated_at", "2019-07-28 21:09:06.311436"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2873"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-03 00:00:00"], ["end_at", "2019-07-03 00:00:00"], ["title", "TANYA TAGAQ"], ["url", "http://berghain.de/event/2873"], ["created_at", "2019-07-28 21:09:06.319928"], ["updated_at", "2019-07-28 21:09:06.319928"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2911"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-03 00:00:00"], ["end_at", "2019-07-03 00:00:00"], ["title", "AFRO x POP"], ["url", "http://berghain.de/event/2911"], ["created_at", "2019-07-28 21:09:06.326138"], ["updated_at", "2019-07-28 21:09:06.326138"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2880"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-04 00:00:00"], ["end_at", "2019-07-04 00:00:00"], ["title", "SÄULE"], ["url", "http://berghain.de/event/2880"], ["created_at", "2019-07-28 21:09:06.332006"], ["updated_at", "2019-07-28 21:09:06.332006"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2879"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-05 00:00:00"], ["end_at", "2019-07-05 00:00:00"], ["title", "UY ZONE"], ["url", "http://berghain.de/event/2879"], ["created_at", "2019-07-28 21:09:06.338150"], ["updated_at", "2019-07-28 21:09:06.338150"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2881"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-05 00:00:00"], ["end_at", "2019-07-05 00:00:00"], ["title", "FINEST FRIDAY"], ["url", "http://berghain.de/event/2881"], ["created_at", "2019-07-28 21:09:06.344980"], ["updated_at", "2019-07-28 21:09:06.344980"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2882"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-06 00:00:00"], ["end_at", "2019-07-06 00:00:00"], ["title", "KLUBNACHT"], ["url", "http://berghain.de/event/2882"], ["created_at", "2019-07-28 21:09:06.350750"], ["updated_at", "2019-07-28 21:09:06.350750"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2878"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-07 00:00:00"], ["end_at", "2019-07-07 00:00:00"], ["title", "CATT"], ["url", "http://berghain.de/event/2878"], ["created_at", "2019-07-28 21:09:06.356343"], ["updated_at", "2019-07-28 21:09:06.356343"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2909"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-11 00:00:00"], ["end_at", "2019-07-11 00:00:00"], ["title", "BROKEN LIFT RECORDS RE…"], ["url", "http://berghain.de/event/2909"], ["created_at", "2019-07-28 21:09:06.362174"], ["updated_at", "2019-07-28 21:09:06.362174"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2883"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-11 00:00:00"], ["end_at", "2019-07-11 00:00:00"], ["title", "SÄULE"], ["url", "http://berghain.de/event/2883"], ["created_at", "2019-07-28 21:09:06.368215"], ["updated_at", "2019-07-28 21:09:06.368215"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2892"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-12 00:00:00"], ["end_at", "2019-07-12 00:00:00"], ["title", "TIME KRYSTAL IV"], ["url", "http://berghain.de/event/2892"], ["created_at", "2019-07-28 21:09:06.373909"], ["updated_at", "2019-07-28 21:09:06.373909"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2884"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-12 00:00:00"], ["end_at", "2019-07-12 00:00:00"], ["title", "FÜNFZEHN JAHRE HYPERDU…"], ["url", "http://berghain.de/event/2884"], ["created_at", "2019-07-28 21:09:06.380115"], ["updated_at", "2019-07-28 21:09:06.380115"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2885"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-13 00:00:00"], ["end_at", "2019-07-13 00:00:00"], ["title", "KLUBNACHT"], ["url", "http://berghain.de/event/2885"], ["created_at", "2019-07-28 21:09:06.385892"], ["updated_at", "2019-07-28 21:09:06.385892"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2836"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-15 00:00:00"], ["end_at", "2019-07-15 00:00:00"], ["title", "DONNY BENÉT"], ["url", "http://berghain.de/event/2836"], ["created_at", "2019-07-28 21:09:06.391574"], ["updated_at", "2019-07-28 21:09:06.391574"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2877"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-17 00:00:00"], ["end_at", "2019-07-17 00:00:00"], ["title", "THE SOFT MOON | IMPERI…"], ["url", "http://berghain.de/event/2877"], ["created_at", "2019-07-28 21:09:06.398460"], ["updated_at", "2019-07-28 21:09:06.398460"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2841"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-18 00:00:00"], ["end_at", "2019-07-18 00:00:00"], ["title", "SONREAL"], ["url", "http://berghain.de/event/2841"], ["created_at", "2019-07-28 21:09:06.404437"], ["updated_at", "2019-07-28 21:09:06.404437"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2886"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-18 00:00:00"], ["end_at", "2019-07-18 00:00:00"], ["title", "SÄULE"], ["url", "http://berghain.de/event/2886"], ["created_at", "2019-07-28 21:09:06.410488"], ["updated_at", "2019-07-28 21:09:06.410488"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2871"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-19 00:00:00"], ["end_at", "2019-07-19 00:00:00"], ["title", "UNIFORM"], ["url", "http://berghain.de/event/2871"], ["created_at", "2019-07-28 21:09:06.416172"], ["updated_at", "2019-07-28 21:09:06.416172"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2887"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-19 00:00:00"], ["end_at", "2019-07-19 00:00:00"], ["title", "ITALORAMA BAR"], ["url", "http://berghain.de/event/2887"], ["created_at", "2019-07-28 21:09:06.421786"], ["updated_at", "2019-07-28 21:09:06.421786"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2888"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-20 00:00:00"], ["end_at", "2019-07-20 00:00:00"], ["title", "KLUBNACHT"], ["url", "http://berghain.de/event/2888"], ["created_at", "2019-07-28 21:09:06.427391"], ["updated_at", "2019-07-28 21:09:06.427391"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2893"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-22 00:00:00"], ["end_at", "2019-07-22 00:00:00"], ["title", "KELSEY LU"], ["url", "http://berghain.de/event/2893"], ["created_at", "2019-07-28 21:09:06.432916"], ["updated_at", "2019-07-28 21:09:06.432916"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2908"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-24 00:00:00"], ["end_at", "2019-07-24 00:00:00"], ["title", "CHRISTEENE"], ["url", "http://berghain.de/event/2908"], ["created_at", "2019-07-28 21:09:06.439710"], ["updated_at", "2019-07-28 21:09:06.439710"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2904"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-25 00:00:00"], ["end_at", "2019-07-25 00:00:00"], ["title", "DANIEL-RYAN SPAULDING"], ["url", "http://berghain.de/event/2904"], ["created_at", "2019-07-28 21:09:06.445464"], ["updated_at", "2019-07-28 21:09:06.445464"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2889"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-25 00:00:00"], ["end_at", "2019-07-25 00:00:00"], ["title", "KULØR"], ["url", "http://berghain.de/event/2889"], ["created_at", "2019-07-28 21:09:06.451188"], ["updated_at", "2019-07-28 21:09:06.451188"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2890"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.5ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-26 00:00:00"], ["end_at", "2019-07-26 00:00:00"], ["title", "FINEST ESP X GARTEN"], ["url", "http://berghain.de/event/2890"], ["created_at", "2019-07-28 21:09:06.456908"], ["updated_at", "2019-07-28 21:09:06.456908"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2894"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-27 00:00:00"], ["end_at", "2019-07-27 00:00:00"], ["title", "KRAFTWERK FOR THE MASSES"], ["url", "http://berghain.de/event/2894"], ["created_at", "2019-07-28 21:09:06.463608"], ["updated_at", "2019-07-28 21:09:06.463608"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2891"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-27 00:00:00"], ["end_at", "2019-07-27 00:00:00"], ["title", "CSD KLUBNACHT"], ["url", "http://berghain.de/event/2891"], ["created_at", "2019-07-28 21:09:06.469231"], ["updated_at", "2019-07-28 21:09:06.469231"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2895"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-07-30 00:00:00"], ["end_at", "2019-07-30 00:00:00"], ["title", "BOOGARINS"], ["url", "http://berghain.de/event/2895"], ["created_at", "2019-07-28 21:09:06.474689"], ["updated_at", "2019-07-28 21:09:06.474689"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (3.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2928"], ["LIMIT", 1]]
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.7ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-01 00:00:00"], ["end_at", "2019-08-01 00:00:00"], ["title", "COVEN"], ["url", "http://berghain.de/event/2928"], ["created_at", "2019-07-28 21:09:07.331567"], ["updated_at", "2019-07-28 21:09:07.331567"]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2929"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.3ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-01 00:00:00"], ["end_at", "2019-08-01 00:00:00"], ["title", "SÄULE"], ["url", "http://berghain.de/event/2929"], ["created_at", "2019-07-28 21:09:07.349797"], ["updated_at", "2019-07-28 21:09:07.349797"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2930"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.5ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-02 00:00:00"], ["end_at", "2019-08-02 00:00:00"], ["title", "…GET PERLONIZED!"], ["url", "http://berghain.de/event/2930"], ["created_at", "2019-07-28 21:09:07.358878"], ["updated_at", "2019-07-28 21:09:07.358878"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2919"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.3ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-03 00:00:00"], ["end_at", "2019-08-03 00:00:00"], ["title", "PHUM VIPHURIT"], ["url", "http://berghain.de/event/2919"], ["created_at", "2019-07-28 21:09:07.368545"], ["updated_at", "2019-07-28 21:09:07.368545"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2931"], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.4ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-03 00:00:00"], ["end_at", "2019-08-03 00:00:00"], ["title", "KLUBNACHT"], ["url", "http://berghain.de/event/2931"], ["created_at", "2019-07-28 21:09:07.378341"], ["updated_at", "2019-07-28 21:09:07.378341"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2932"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-08 00:00:00"], ["end_at", "2019-08-08 00:00:00"], ["title", "LACKREC. VS MAGIC POWER"], ["url", "http://berghain.de/event/2932"], ["created_at", "2019-07-28 21:09:07.385950"], ["updated_at", "2019-07-28 21:09:07.385950"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2933"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-09 00:00:00"], ["end_at", "2019-08-09 00:00:00"], ["title", "OSTGUT TON NACHT"], ["url", "http://berghain.de/event/2933"], ["created_at", "2019-07-28 21:09:07.391761"], ["updated_at", "2019-07-28 21:09:07.391761"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2934"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-10 00:00:00"], ["end_at", "2019-08-10 00:00:00"], ["title", "OSTGUT TON NACHT"], ["url", "http://berghain.de/event/2934"], ["created_at", "2019-07-28 21:09:07.397894"], ["updated_at", "2019-07-28 21:09:07.397894"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2875"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-12 00:00:00"], ["end_at", "2019-08-12 00:00:00"], ["title", "LUMERIANS"], ["url", "http://berghain.de/event/2875"], ["created_at", "2019-07-28 21:09:07.403679"], ["updated_at", "2019-07-28 21:09:07.403679"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2918"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-13 00:00:00"], ["end_at", "2019-08-13 00:00:00"], ["title", "ROLANDO BRUNO Y EL GRU…"], ["url", "http://berghain.de/event/2918"], ["created_at", "2019-07-28 21:09:07.409432"], ["updated_at", "2019-07-28 21:09:07.409432"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2920"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-14 00:00:00"], ["end_at", "2019-08-14 00:00:00"], ["title", "NATIVE YOUNG"], ["url", "http://berghain.de/event/2920"], ["created_at", "2019-07-28 21:09:07.415232"], ["updated_at", "2019-07-28 21:09:07.415232"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2935"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-15 00:00:00"], ["end_at", "2019-08-15 00:00:00"], ["title", "SÄULE "], ["url", "http://berghain.de/event/2935"], ["created_at", "2019-07-28 21:09:07.420892"], ["updated_at", "2019-07-28 21:09:07.420892"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2921"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-16 00:00:00"], ["end_at", "2019-08-16 00:00:00"], ["title", "ICH BRAUCHE EINE GENIE VOL. 8"], ["url", "http://berghain.de/event/2921"], ["created_at", "2019-07-28 21:09:07.427060"], ["updated_at", "2019-07-28 21:09:07.427060"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2936"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.1ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-16 00:00:00"], ["end_at", "2019-08-16 00:00:00"], ["title", "CXEMA BACKSTAGE X MANNEQUIN"], ["url", "http://berghain.de/event/2936"], ["created_at", "2019-07-28 21:09:07.433013"], ["updated_at", "2019-07-28 21:09:07.433013"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2937"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-17 00:00:00"], ["end_at", "2019-08-17 00:00:00"], ["title", "KLUBNACHT"], ["url", "http://berghain.de/event/2937"], ["created_at", "2019-07-28 21:09:07.439138"], ["updated_at", "2019-07-28 21:09:07.439138"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2897"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-22 00:00:00"], ["end_at", "2019-08-22 00:00:00"], ["title", "LESUNG: \"BRÜDER\" "], ["url", "http://berghain.de/event/2897"], ["created_at", "2019-07-28 21:09:07.446197"], ["updated_at", "2019-07-28 21:09:07.446197"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2938"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-22 00:00:00"], ["end_at", "2019-08-22 00:00:00"], ["title", "SÄULE "], ["url", "http://berghain.de/event/2938"], ["created_at", "2019-07-28 21:09:07.452100"], ["updated_at", "2019-07-28 21:09:07.452100"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2915"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-23 00:00:00"], ["end_at", "2019-08-23 00:00:00"], ["title", "LEISURE SYSTEM X FINEST FRIDAY"], ["url", "http://berghain.de/event/2915"], ["created_at", "2019-07-28 21:09:07.457958"], ["updated_at", "2019-07-28 21:09:07.457958"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2917"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-24 00:00:00"], ["end_at", "2019-08-24 00:00:00"], ["title", "VIOLET FIELDS"], ["url", "http://berghain.de/event/2917"], ["created_at", "2019-07-28 21:09:07.464164"], ["updated_at", "2019-07-28 21:09:07.464164"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2939"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-24 00:00:00"], ["end_at", "2019-08-24 00:00:00"], ["title", "KLUBNACHT"], ["url", "http://berghain.de/event/2939"], ["created_at", "2019-07-28 21:09:07.469620"], ["updated_at", "2019-07-28 21:09:07.469620"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2940"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-29 00:00:00"], ["end_at", "2019-08-29 00:00:00"], ["title", "SÄULE"], ["url", "http://berghain.de/event/2940"], ["created_at", "2019-07-28 21:09:07.475250"], ["updated_at", "2019-07-28 21:09:07.475250"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2922"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-30 00:00:00"], ["end_at", "2019-08-30 00:00:00"], ["title", "HODJA"], ["url", "http://berghain.de/event/2922"], ["created_at", "2019-07-28 21:09:07.481215"], ["updated_at", "2019-07-28 21:09:07.481215"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2941"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-30 00:00:00"], ["end_at", "2019-08-30 00:00:00"], ["title", "FINEST FRIDAY"], ["url", "http://berghain.de/event/2941"], ["created_at", "2019-07-28 21:09:07.486637"], ["updated_at", "2019-07-28 21:09:07.486637"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2942"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-08-31 00:00:00"], ["end_at", "2019-08-31 00:00:00"], ["title", "KLUBNACHT"], ["url", "http://berghain.de/event/2942"], ["created_at", "2019-07-28 21:09:07.492486"], ["updated_at", "2019-07-28 21:09:07.492486"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (2.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2797"], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (2.4ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-09-04 00:00:00"], ["end_at", "2019-09-04 00:00:00"], ["title", "ANDROMEDA MEGA EXPRESS…"], ["url", "http://berghain.de/event/2797"], ["created_at", "2019-07-28 21:09:08.074478"], ["updated_at", "2019-07-28 21:09:08.074478"]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2876"], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (2.4ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-09-10 00:00:00"], ["end_at", "2019-09-10 00:00:00"], ["title", "MINAMI DEUTSCH / 南ドイツ"], ["url", "http://berghain.de/event/2876"], ["created_at", "2019-07-28 21:09:08.093163"], ["updated_at", "2019-07-28 21:09:08.093163"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2923"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-09-11 00:00:00"], ["end_at", "2019-09-11 00:00:00"], ["title", "ARMAND HAMMER  "], ["url", "http://berghain.de/event/2923"], ["created_at", "2019-07-28 21:09:08.105199"], ["updated_at", "2019-07-28 21:09:08.105199"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2900"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-09-15 00:00:00"], ["end_at", "2019-09-15 00:00:00"], ["title", "THE HOLY DRUG COUPLE"], ["url", "http://berghain.de/event/2900"], ["created_at", "2019-07-28 21:09:08.112158"], ["updated_at", "2019-07-28 21:09:08.112158"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2914"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-09-16 00:00:00"], ["end_at", "2019-09-16 00:00:00"], ["title", "THE HORMONES / 荷尔蒙小姐"], ["url", "http://berghain.de/event/2914"], ["created_at", "2019-07-28 21:09:08.119135"], ["updated_at", "2019-07-28 21:09:08.119135"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2867"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.2ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-09-17 00:00:00"], ["end_at", "2019-09-17 00:00:00"], ["title", "SASAMI"], ["url", "http://berghain.de/event/2867"], ["created_at", "2019-07-28 21:09:08.126029"], ["updated_at", "2019-07-28 21:09:08.126029"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2943"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-09-18 00:00:00"], ["end_at", "2019-09-18 00:00:00"], ["title", "K-TRAP"], ["url", "http://berghain.de/event/2943"], ["created_at", "2019-07-28 21:09:08.133032"], ["updated_at", "2019-07-28 21:09:08.133032"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2854"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-09-24 00:00:00"], ["end_at", "2019-09-24 00:00:00"], ["title", "THE MYSTERY LIGHTS"], ["url", "http://berghain.de/event/2854"], ["created_at", "2019-07-28 21:09:08.138615"], ["updated_at", "2019-07-28 21:09:08.138615"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2916"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.1ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-09-29 00:00:00"], ["end_at", "2019-09-29 00:00:00"], ["title", "MARISSA NADLER"], ["url", "http://berghain.de/event/2916"], ["created_at", "2019-07-28 21:09:08.145148"], ["updated_at", "2019-07-28 21:09:08.145148"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2910"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-11-03 00:00:00"], ["end_at", "2019-11-03 00:00:00"], ["title", "GOLD "], ["url", "http://berghain.de/event/2910"], ["created_at", "2019-07-28 21:09:08.737656"], ["updated_at", "2019-07-28 21:09:08.737656"]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2835"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-11-04 00:00:00"], ["end_at", "2019-11-04 00:00:00"], ["title", "XIU XIU"], ["url", "http://berghain.de/event/2835"], ["created_at", "2019-07-28 21:09:08.746745"], ["updated_at", "2019-07-28 21:09:08.746745"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2946"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-11-06 00:00:00"], ["end_at", "2019-11-06 00:00:00"], ["title", "MANNEQUIN PUSSY"], ["url", "http://berghain.de/event/2946"], ["created_at", "2019-07-28 21:09:08.752550"], ["updated_at", "2019-07-28 21:09:08.752550"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2874"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-11-08 00:00:00"], ["end_at", "2019-11-08 00:00:00"], ["title", "PAULS JETS"], ["url", "http://berghain.de/event/2874"], ["created_at", "2019-07-28 21:09:08.758256"], ["updated_at", "2019-07-28 21:09:08.758256"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2905"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-11-12 00:00:00"], ["end_at", "2019-11-12 00:00:00"], ["title", "JAY SOM"], ["url", "http://berghain.de/event/2905"], ["created_at", "2019-07-28 21:09:08.764704"], ["updated_at", "2019-07-28 21:09:08.764704"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2926"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-11-13 00:00:00"], ["end_at", "2019-11-13 00:00:00"], ["title", "OMNI"], ["url", "http://berghain.de/event/2926"], ["created_at", "2019-07-28 21:09:08.770627"], ["updated_at", "2019-07-28 21:09:08.770627"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2902"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-11-14 00:00:00"], ["end_at", "2019-11-14 00:00:00"], ["title", "KOKOKO!"], ["url", "http://berghain.de/event/2902"], ["created_at", "2019-07-28 21:09:08.776682"], ["updated_at", "2019-07-28 21:09:08.776682"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2907"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-11-14 00:00:00"], ["end_at", "2019-11-14 00:00:00"], ["title", "GLASS MUSEUM"], ["url", "http://berghain.de/event/2907"], ["created_at", "2019-07-28 21:09:08.782487"], ["updated_at", "2019-07-28 21:09:08.782487"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2944"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-11-18 00:00:00"], ["end_at", "2019-11-18 00:00:00"], ["title", "FIEH"], ["url", "http://berghain.de/event/2944"], ["created_at", "2019-07-28 21:09:08.788128"], ["updated_at", "2019-07-28 21:09:08.788128"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2906"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-11-21 00:00:00"], ["end_at", "2019-11-21 00:00:00"], ["title", "INJURY RESERVE"], ["url", "http://berghain.de/event/2906"], ["created_at", "2019-07-28 21:09:08.795074"], ["updated_at", "2019-07-28 21:09:08.795074"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2870"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-10-02 00:00:00"], ["end_at", "2019-10-02 00:00:00"], ["title", "XUL ZOLAR"], ["url", "http://berghain.de/event/2870"], ["created_at", "2019-07-28 21:09:09.100416"], ["updated_at", "2019-07-28 21:09:09.100416"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2872"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.1ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-10-06 00:00:00"], ["end_at", "2019-10-06 00:00:00"], ["title", "DIE SAUNA"], ["url", "http://berghain.de/event/2872"], ["created_at", "2019-07-28 21:09:09.108477"], ["updated_at", "2019-07-28 21:09:09.108477"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2832"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-10-07 00:00:00"], ["end_at", "2019-10-07 00:00:00"], ["title", "KALEEM TAYLOR"], ["url", "http://berghain.de/event/2832"], ["created_at", "2019-07-28 21:09:09.114646"], ["updated_at", "2019-07-28 21:09:09.114646"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2785"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-10-08 00:00:00"], ["end_at", "2019-10-08 00:00:00"], ["title", "LITTLE SIMZ"], ["url", "http://berghain.de/event/2785"], ["created_at", "2019-07-28 21:09:09.120106"], ["updated_at", "2019-07-28 21:09:09.120106"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2868"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-10-15 00:00:00"], ["end_at", "2019-10-15 00:00:00"], ["title", "CARNIVAL YOUTH"], ["url", "http://berghain.de/event/2868"], ["created_at", "2019-07-28 21:09:09.125690"], ["updated_at", "2019-07-28 21:09:09.125690"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2903"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-10-17 00:00:00"], ["end_at", "2019-10-17 00:00:00"], ["title", "ANKATHIE KOI   "], ["url", "http://berghain.de/event/2903"], ["created_at", "2019-07-28 21:09:09.131766"], ["updated_at", "2019-07-28 21:09:09.131766"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2901"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-10-22 00:00:00"], ["end_at", "2019-10-22 00:00:00"], ["title", "ANDREYA TRIANA"], ["url", "http://berghain.de/event/2901"], ["created_at", "2019-07-28 21:09:09.137471"], ["updated_at", "2019-07-28 21:09:09.137471"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2927"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-10-22 00:00:00"], ["end_at", "2019-10-22 00:00:00"], ["title", "M¥SS KETA"], ["url", "http://berghain.de/event/2927"], ["created_at", "2019-07-28 21:09:09.143734"], ["updated_at", "2019-07-28 21:09:09.143734"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2913"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-10-23 00:00:00"], ["end_at", "2019-10-23 00:00:00"], ["title", "VAGABON"], ["url", "http://berghain.de/event/2913"], ["created_at", "2019-07-28 21:09:09.149236"], ["updated_at", "2019-07-28 21:09:09.149236"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2899"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-10-25 00:00:00"], ["end_at", "2019-10-25 00:00:00"], ["title", "IMPERIAL WAX"], ["url", "http://berghain.de/event/2899"], ["created_at", "2019-07-28 21:09:09.154643"], ["updated_at", "2019-07-28 21:09:09.154643"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2912"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-10-26 00:00:00"], ["end_at", "2019-10-26 00:00:00"], ["title", "KOMETENMELODIEN: STEF CHURA"], ["url", "http://berghain.de/event/2912"], ["created_at", "2019-07-28 21:09:09.160307"], ["updated_at", "2019-07-28 21:09:09.160307"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2925"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.1ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-10-28 00:00:00"], ["end_at", "2019-10-28 00:00:00"], ["title", "CAUTIOUS CLAY"], ["url", "http://berghain.de/event/2925"], ["created_at", "2019-07-28 21:09:09.165613"], ["updated_at", "2019-07-28 21:09:09.165613"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2924"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-10-31 00:00:00"], ["end_at", "2019-10-31 00:00:00"], ["title", "DAWES"], ["url", "http://berghain.de/event/2924"], ["created_at", "2019-07-28 21:09:09.171217"], ["updated_at", "2019-07-28 21:09:09.171217"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2945"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.1ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-12-03 00:00:00"], ["end_at", "2019-12-03 00:00:00"], ["title", "AMILLI"], ["url", "http://berghain.de/event/2945"], ["created_at", "2019-07-28 21:09:09.367871"], ["updated_at", "2019-07-28 21:09:09.367871"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2898"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-12-07 00:00:00"], ["end_at", "2019-12-07 00:00:00"], ["title", "ILGEN-NUR"], ["url", "http://berghain.de/event/2898"], ["created_at", "2019-07-28 21:09:09.376811"], ["updated_at", "2019-07-28 21:09:09.376811"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2947"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "http://berghain.de"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2019-12-21 00:00:00"], ["end_at", "2019-12-21 00:00:00"], ["title", "A TALE OF GOLDEN KEYES"], ["url", "http://berghain.de/event/2947"], ["created_at", "2019-07-28 21:09:09.382480"], ["updated_at", "2019-07-28 21:09:09.382480"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
