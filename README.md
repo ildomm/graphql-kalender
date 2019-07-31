@@ -24,19 +24,21 @@ rails db:seed
 ```
 
 Starting the server:
-
 ```
 rails server
 ```
 
-Importing events:
+Importing events using Cron:
+```
+whenever --update-crontab
+```
 
+Importing events manually:
 ```
 rake explore:go
 ```
 
 Opening the application:
-
 ```
 open http://localhost:3000/
 ```

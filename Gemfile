@@ -19,6 +19,7 @@ gem 'search_object'
 gem 'search_object_graphql'
 gem 'tzinfo-data'
 gem 'selenium-webdriver'
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i(mri mingw x64_mingw)

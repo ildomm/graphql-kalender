@@ -390,3 +390,27 @@ Resolvers::EventsSearchTest: test_filter_option
   [1m[36mSource Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "www.site10.com"], ["id", 35], ["LIMIT", 1]]
   [1m[36mEvent Create (1.1ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 35], ["start_at", "2019-07-28 21:33:08.907478"], ["end_at", "2019-07-28 21:33:08.907533"], ["title", "test4"], ["url", "http://test4.com"], ["created_at", "2019-07-28 21:33:08.913385"], ["updated_at", "2019-07-28 21:33:08.913385"]]
   [1m[35m (1.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE ((((title LIKE '%test1%') OR (url LIKE '%test2%')) OR (url LIKE '%test3%')) OR (title LIKE '%test2%')) ORDER BY created_at DESC[0m
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+Resolvers::EventsSearchTest: test_first_option
+----------------------------------------------
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSource Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "www.site11.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (1.2ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 11"], ["url", "www.site11.com"], ["config", "{}"], ["created_at", "2019-07-28 21:50:51.706209"], ["updated_at", "2019-07-28 21:50:51.706209"]]
+  [1m[35m (1.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSource Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "www.site11.com"], ["id", 36], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.3ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 36], ["start_at", "2019-07-28 21:50:51.710017"], ["end_at", "2019-07-28 21:50:51.710031"], ["title", "old"], ["url", "www.site7.com"], ["created_at", "2019-07-28 21:50:51.713609"], ["updated_at", "2019-07-28 21:50:51.713609"]]
+  [1m[35m (1.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSource Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "www.site12.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (1.3ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 12"], ["url", "www.site12.com"], ["config", "{}"], ["created_at", "2019-07-28 21:50:51.721647"], ["updated_at", "2019-07-28 21:50:51.721647"]]
+  [1m[35m (0.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSource Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 AND "sources"."id" != $2 LIMIT $3[0m  [["url", "www.site12.com"], ["id", 37], ["LIMIT", 1]]
+  [1m[36mEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 37], ["start_at", "2019-07-28 21:50:51.724893"], ["end_at", "2019-07-28 21:50:51.724905"], ["title", "new"], ["url", "www.site8.com"], ["created_at", "2019-07-28 21:50:51.728429"], ["updated_at", "2019-07-28 21:50:51.728429"]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m

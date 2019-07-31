@@ -15,7 +15,7 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.datetime :end_at, null: false
       t.string :title, null: false
       t.string :url, null: true
-      t.index :url, unique: true
+      t.index :url, unique: false
       t.index :start_at, unique: false
       t.index :end_at, unique: false
       t.index :title, unique: false

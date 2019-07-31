@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_204410) do
     t.index ["source_id"], name: "index_events_on_source_id"
     t.index ["start_at"], name: "index_events_on_start_at"
     t.index ["title"], name: "index_events_on_title"
-    t.index ["url"], name: "index_events_on_url", unique: true
+    t.index ["url"], name: "index_events_on_url"
   end
 
   create_table "sources", force: :cascade do |t|

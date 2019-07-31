@@ -40,6 +40,7 @@ class SiteWorker
     errors = Concurrent::Array.new
     crawler = CrawlerWorker.new
 
+    # Split inside threads the real "work" over pages
     urls.each do |url|
       Concurrent::Future.execute({ executor: pool }) do
         begin
