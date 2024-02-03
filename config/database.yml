@@ -1,23 +1,22 @@
 
-default: &default
+
+development:
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
-development:
-  <<: *default
+  username: postgres
   database: kalendar_development
-  username: kalendar
-  password: rdenadark
 
 test:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
   database: kalendar_test
-  username: kalendar
-  password: rdenadark
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
   database: kalendar_production
-  username: kalendar
-  password: rdenadark

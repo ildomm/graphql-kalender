@@ -68,7 +68,7 @@ class CrawlerWorker
 
     page = Nokogiri::HTML(@content)
 
-    # TODO: Improve dinamicu Such rude way to navigate over tahts
+    # TODO: Improve dynamic Such rude way to navigate over tahts
     page.xpath(@config['xpath']).each do |element|
 
       # TODO: improve validations
