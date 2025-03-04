@@ -33,23 +33,8 @@ open: ## Open the application in the default browser
 test: ## Run the test suite
 	bundle exec rspec
 
-test-watch: ## Run tests automatically on file changes
-	bundle exec guard
-
-test-coverage: ## Run tests with coverage report
-	COVERAGE=true bundle exec rspec
-
 lint: ## Run Rubocop linting
 	bundle exec rubocop
-
-lint-fix: ## Auto-fix Rubocop issues when possible
-	bundle exec rubocop -a
-
-console: ## Start Rails console
-	bundle exec rails console
-
-routes: ## Display all routes
-	bundle exec rails routes
 
 clean: ## Clean temporary files and logs
 	bundle exec rails log:clear tmp:clear
