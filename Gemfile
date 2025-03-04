@@ -26,6 +26,10 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'graphiql-rails', '1.5.0'
   gem 'rubocop'
+  gem 'rspec-rails', '~> 5.0'
+  gem 'shoulda-matchers', '~> 4.0'
+  gem 'database_cleaner-active_record'
+  gem 'faker'
 end
 
 group :development do

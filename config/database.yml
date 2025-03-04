@@ -2,22 +2,24 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: 127.0.0.1
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   database: kalendar_development
-  username: kalendar
-  password: rdenadark
+  username: postgres
+  password: postgres
 
 test:
   <<: *default
   database: kalendar_test
-  username: kalendar
-  password: rdenadark
+  username: postgres
+  password: postgres
 
 production:
   <<: *default
   database: kalendar_production
-  username: kalendar
-  password: rdenadark
+  username: postgres
+  password: postgres
+

@@ -1,0 +1,76 @@
+# Ignore bundler config
+/.bundle
+
+# Ignore all logfiles and tempfiles
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
+# Ignore master key for decrypting credentials
+/config/master.key
+
+# Ignore database configuration
+/config/database.yml
+
+# Ignore environment variables
+.env
+.env.*
+
+# Ignore test coverage reports
+/coverage/*
+
+# Ignore public uploads
+/public/uploads
+/public/assets
+
+# Ignore node modules
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+# Ignore Ruby version managers
+.ruby-version
+.ruby-gemset
+.rvmrc
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Ignore OS specific files
+.DS_Store
+Thumbs.db
+
+# Ignore rspec failure tracking
+spec/examples.txt
+
+# Ignore local development files
+.byebug_history
+.pry_history
+
+# Ignore production assets
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+/public/assets
+
+# Ignore yarn files
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+# Ignore redis dump file
+dump.rdb
+
+# Ignore SimpleCov coverage reports
+/coverage/
