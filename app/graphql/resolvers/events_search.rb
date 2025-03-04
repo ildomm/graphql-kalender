@@ -54,9 +54,7 @@ class Resolvers::EventsSearch < GraphQL::Schema::Resolver
 
     branches << scope
 
-    if value[:OR].present?
-      value[:OR].reduce(branches) { |s, v| normalize_filters(v, s) }
-    end
+    value[:OR].reduce(branches) { |s, v| normalize_filters(v, s) } if value[:OR].present?
 
     branches
   end

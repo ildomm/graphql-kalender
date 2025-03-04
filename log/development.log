@@ -15867,3 +15867,5 @@ FOREIGN KEY ("source_id")
   [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2898"], ["LIMIT", 1]]
   [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2947"], ["LIMIT", 1]]
   [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."url" = $1 LIMIT $2[0m  [["url", "http://berghain.de/event/2947"], ["LIMIT", 1]]
+  [1m[35m (308.1ms)[0m  [1m[35mCREATE DATABASE "kalendar_development" ENCODING = 'unicode'[0m
+  [1m[35m (25.0ms)[0m  [1m[35mCREATE DATABASE "kalendar_test" ENCODING = 'unicode'[0m

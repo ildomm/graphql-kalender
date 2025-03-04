@@ -21,6 +21,5 @@ module Types
     def source(id:)
       Source.find(id)
     end
-
   end
 end

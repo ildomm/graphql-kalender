@@ -1,5 +1,4 @@
 class SiteWorker
-
   # Default sources config, first version
   # A http://berghain.de
   # {"page_format":"/events/%Y-%m","driver":"nokogiri","xpath":"//h4","url":"a|href","title":"a|span","dates":"a"}
@@ -27,15 +26,14 @@ class SiteWorker
     config = JSON.parse(source.config)
 
     # A year from now only
-    12.times do |index|
+    12.times do |_index|
       urls << source.url + current_time.strftime(config['page_format'])
-      current_time = current_time + 1.month
+      current_time += 1.month
     end
     urls
   end
 
   def invoke_crawler(source, urls)
-
     pool = Concurrent::FixedThreadPool.new(3)
     errors = Concurrent::Array.new
     crawler = CrawlerWorker.new
@@ -43,11 +41,9 @@ class SiteWorker
     # Split inside threads the real "work" over pages
     urls.each do |url|
       Concurrent::Future.execute({ executor: pool }) do
-        begin
-          crawler.perform(source, url)
-        rescue StandardError => e
-          errors << e
-        end
+        crawler.perform(source, url)
+      rescue StandardError => e
+        errors << e
       end
     end
 
@@ -56,10 +52,8 @@ class SiteWorker
       pool.wait_for_termination
     end
 
-    if errors.size > 0
-      puts errors.inspect
-    end
+    return unless errors.size.positive?
 
+    puts errors.inspect
   end
-
 end

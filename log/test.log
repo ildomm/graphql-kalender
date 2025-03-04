@@ -1229,3 +1229,217 @@ Migrating to CreateLinks (20250304064900)
   [1m[36mLink Load (3.2ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY created_at DESC[0m
   [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
   [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "sources" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "links" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.7ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.8ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'kalendar_test'[0m
+  [1m[35m (21.5ms)[0m  [1m[35mTRUNCATE TABLE "sources", "events", "links" RESTART IDENTITY RESTRICT;[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "sources" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "links" ENABLE TRIGGER ALL[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (1.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSource Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://source1.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (4.3ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 1"], ["url", "http://source1.com"], ["config", "{}"], ["created_at", "2025-03-04 07:17:22.454949"], ["updated_at", "2025-03-04 07:17:22.454949"]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.7ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mEvent Create (2.2ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 1], ["start_at", "2025-03-05 07:17:22.523536"], ["end_at", "2025-03-06 07:17:22.523821"], ["title", "old"], ["url", "http://example1.com"], ["created_at", "2025-03-04 07:17:22.531048"], ["updated_at", "2025-03-04 07:17:22.531048"]]
+  [1m[35m (1.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://source2.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (2.1ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 2"], ["url", "http://source2.com"], ["config", "{}"], ["created_at", "2025-03-04 07:17:22.553701"], ["updated_at", "2025-03-04 07:17:22.553701"]]
+  [1m[35m (0.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 2], ["start_at", "2025-03-05 07:17:22.565432"], ["end_at", "2025-03-06 07:17:22.565576"], ["title", "new"], ["url", "http://example2.com"], ["created_at", "2025-03-04 07:17:22.569887"], ["updated_at", "2025-03-04 07:17:22.569887"]]
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC OFFSET $1[0m  [["OFFSET", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSource Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://source3.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (0.7ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 3"], ["url", "http://source3.com"], ["config", "{}"], ["created_at", "2025-03-04 07:17:22.634713"], ["updated_at", "2025-03-04 07:17:22.634713"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 3], ["start_at", "2025-03-05 07:17:22.638558"], ["end_at", "2025-03-06 07:17:22.638732"], ["title", "old"], ["url", "http://example3.com"], ["created_at", "2025-03-04 07:17:22.642084"], ["updated_at", "2025-03-04 07:17:22.642084"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSource Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://source4.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (1.5ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 4"], ["url", "http://source4.com"], ["config", "{}"], ["created_at", "2025-03-04 07:17:22.654866"], ["updated_at", "2025-03-04 07:17:22.654866"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.7ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mEvent Create (2.5ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 4], ["start_at", "2025-03-05 07:17:22.661974"], ["end_at", "2025-03-06 07:17:22.662101"], ["title", "new"], ["url", "http://example4.com"], ["created_at", "2025-03-04 07:17:22.667013"], ["updated_at", "2025-03-04 07:17:22.667013"]]
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mEvent Load (12.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (3.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (6.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSource Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://source5.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (2.9ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 5"], ["url", "http://source5.com"], ["config", "{}"], ["created_at", "2025-03-04 07:17:22.806239"], ["updated_at", "2025-03-04 07:17:22.806239"]]
+  [1m[35m (5.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (4.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mEvent Create (1.4ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 5], ["start_at", "2025-03-05 07:17:22.829415"], ["end_at", "2025-03-06 07:17:22.829566"], ["title", "Event 1"], ["url", "http://example5.com"], ["created_at", "2025-02-25 07:17:22.792621"], ["updated_at", "2025-03-04 07:17:22.841215"]]
+  [1m[35m (2.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSource Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://source6.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (1.7ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 6"], ["url", "http://source6.com"], ["config", "{}"], ["created_at", "2025-03-04 07:17:22.870937"], ["updated_at", "2025-03-04 07:17:22.870937"]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mEvent Create (7.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 6], ["start_at", "2025-03-05 07:17:22.906026"], ["end_at", "2025-03-06 07:17:22.906169"], ["title", "Event 2"], ["url", "http://example6.com"], ["created_at", "2025-02-04 07:17:22.861950"], ["updated_at", "2025-03-04 07:17:22.912907"]]
+  [1m[35m (4.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSource Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://source7.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (1.9ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 7"], ["url", "http://source7.com"], ["config", "{}"], ["created_at", "2025-03-04 07:17:23.005693"], ["updated_at", "2025-03-04 07:17:23.005693"]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 7], ["start_at", "2025-03-05 07:17:23.013294"], ["end_at", "2025-03-06 07:17:23.013443"], ["title", "Event 3"], ["url", "http://example7.com"], ["created_at", "2025-02-25 07:17:23.000667"], ["updated_at", "2025-03-04 07:17:23.015545"]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSource Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://source8.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (0.5ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 8"], ["url", "http://source8.com"], ["config", "{}"], ["created_at", "2025-03-04 07:17:23.033136"], ["updated_at", "2025-03-04 07:17:23.033136"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mEvent Create (1.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 8], ["start_at", "2025-03-05 07:17:23.041044"], ["end_at", "2025-03-06 07:17:23.041433"], ["title", "Event 4"], ["url", "http://example8.com"], ["created_at", "2025-02-04 07:17:23.023220"], ["updated_at", "2025-03-04 07:17:23.047058"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (6.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (5.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSource Exists (3.6ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://source9.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (1.8ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 9"], ["url", "http://source9.com"], ["config", "{}"], ["created_at", "2025-03-04 07:17:23.145729"], ["updated_at", "2025-03-04 07:17:23.145729"]]
+  [1m[35m (1.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mEvent Create (2.3ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 9], ["start_at", "2025-03-05 07:17:23.157922"], ["end_at", "2025-03-06 07:17:23.159938"], ["title", "test1"], ["url", "http://test1.com"], ["created_at", "2025-03-04 07:17:23.172597"], ["updated_at", "2025-03-04 07:17:23.172597"]]
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (2.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSource Exists (10.4ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://source10.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (1.5ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 10"], ["url", "http://source10.com"], ["config", "{}"], ["created_at", "2025-03-04 07:17:23.214251"], ["updated_at", "2025-03-04 07:17:23.214251"]]
+  [1m[35m (2.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (2.8ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mEvent Create (5.5ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 10], ["start_at", "2025-03-05 07:17:23.291176"], ["end_at", "2025-03-06 07:17:23.300904"], ["title", "test2"], ["url", "http://test2.com"], ["created_at", "2025-03-04 07:17:23.310466"], ["updated_at", "2025-03-04 07:17:23.310466"]]
+  [1m[35m (1.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSource Exists (3.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://source11.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (2.7ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 11"], ["url", "http://source11.com"], ["config", "{}"], ["created_at", "2025-03-04 07:17:23.346641"], ["updated_at", "2025-03-04 07:17:23.346641"]]
+  [1m[35m (2.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.7ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mEvent Create (4.6ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 11], ["start_at", "2025-03-05 07:17:23.366603"], ["end_at", "2025-03-06 07:17:23.366749"], ["title", "test3"], ["url", "http://test3.com"], ["created_at", "2025-03-04 07:17:23.371075"], ["updated_at", "2025-03-04 07:17:23.371075"]]
+  [1m[35m (1.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSource Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sources" WHERE "sources"."url" = $1 LIMIT $2[0m  [["url", "http://source12.com"], ["LIMIT", 1]]
+  [1m[36mSource Create (1.9ms)[0m  [1m[32mINSERT INTO "sources" ("name", "url", "config", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Source 12"], ["url", "http://source12.com"], ["config", "{}"], ["created_at", "2025-03-04 07:17:23.403898"], ["updated_at", "2025-03-04 07:17:23.403898"]]
+  [1m[35m (2.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (2.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mEvent Create (1.8ms)[0m  [1m[32mINSERT INTO "events" ("source_id", "start_at", "end_at", "title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["source_id", 12], ["start_at", "2025-03-05 07:17:23.415772"], ["end_at", "2025-03-06 07:17:23.416617"], ["title", "test4"], ["url", "http://test4.com"], ["created_at", "2025-03-04 07:17:23.422097"], ["updated_at", "2025-03-04 07:17:23.422097"]]
+  [1m[35m (1.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mEvent Load (4.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE ((((title LIKE '%test1%') OR (url LIKE '%test2%')) OR (url LIKE '%test3%')) OR (title LIKE '%test2%')) ORDER BY created_at DESC[0m
+  [1m[35m (4.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mLink Create (4.3ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://example1.com"], ["description", "old"], ["created_at", "2025-03-04 07:17:23.762811"], ["updated_at", "2025-03-04 07:17:23.762811"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mLink Create (0.9ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://example2.com"], ["description", "new"], ["created_at", "2025-03-04 07:17:23.773256"], ["updated_at", "2025-03-04 07:17:23.773256"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT  "links".* FROM "links" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mLink Create (0.7ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://example3.com"], ["description", "old"], ["created_at", "2025-03-04 07:17:23.801736"], ["updated_at", "2025-03-04 07:17:23.801736"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mLink Create (0.7ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://example4.com"], ["description", "new"], ["created_at", "2025-03-04 07:17:23.808038"], ["updated_at", "2025-03-04 07:17:23.808038"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY created_at DESC OFFSET $1[0m  [["OFFSET", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mLink Create (2.7ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://example5.com"], ["description", "Link description 1"], ["created_at", "2025-02-25 07:17:23.831304"], ["updated_at", "2025-03-04 07:17:23.833593"]]
+  [1m[35m (4.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mLink Create (2.1ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://example6.com"], ["description", "Link description 2"], ["created_at", "2025-02-04 07:17:23.848914"], ["updated_at", "2025-03-04 07:17:23.855071"]]
+  [1m[35m (8.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mLink Load (1.9ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY created_at ASC[0m
+  [1m[35m (17.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (46.9ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mLink Create (2.2ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://example7.com"], ["description", "Link description 3"], ["created_at", "2025-02-25 07:17:23.951209"], ["updated_at", "2025-03-04 07:17:24.005039"]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mLink Create (1.3ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://example8.com"], ["description", "Link description 4"], ["created_at", "2025-02-04 07:17:24.012619"], ["updated_at", "2025-03-04 07:17:24.016942"]]
+  [1m[35m (0.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mLink Load (2.3ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY created_at DESC[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mLink Create (1.2ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://test1.com"], ["description", "test1"], ["created_at", "2025-03-04 07:17:24.058025"], ["updated_at", "2025-03-04 07:17:24.058025"]]
+  [1m[35m (1.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (2.4ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mLink Create (7.2ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://test2.com"], ["description", "test2"], ["created_at", "2025-03-04 07:17:24.079022"], ["updated_at", "2025-03-04 07:17:24.079022"]]
+  [1m[35m (5.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.4ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mLink Create (1.5ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://test3.com"], ["description", "test3"], ["created_at", "2025-03-04 07:17:24.141298"], ["updated_at", "2025-03-04 07:17:24.141298"]]
+  [1m[35m (2.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mLink Create (3.2ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://test4.com"], ["description", "test4"], ["created_at", "2025-03-04 07:17:24.156105"], ["updated_at", "2025-03-04 07:17:24.156105"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mLink Load (3.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE ((((description LIKE '%test1%') OR (url LIKE '%test2%')) OR (url LIKE '%test3%')) OR (description LIKE '%test2%')) ORDER BY created_at DESC[0m
+  [1m[35m (3.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (3.4ms)[0m  [1m[31mROLLBACK[0m
