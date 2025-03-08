@@ -66,7 +66,7 @@ GEM
       railties (>= 5.0.0)
     faker (3.4.2)
       i18n (>= 1.8.11, < 2)
-    ffi (1.17.1-x64-mingw32)
+    ffi (1.17.1)
     globalid (1.1.0)
       activesupport (>= 5.0)
     graphiql-rails (1.5.0)
@@ -96,6 +96,7 @@ GEM
     marcel (1.0.4)
     method_source (1.1.0)
     mini_mime (1.1.5)
+    mini_portile2 (2.8.8)
     minitest (5.25.4)
     net-imap (0.4.19)
       date
@@ -107,13 +108,14 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.15.7-x64-mingw32)
+    nokogiri (1.15.7)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     parallel (1.26.3)
     parser (3.3.7.1)
       ast (~> 2.4.1)
       racc
-    pg (1.5.9-x64-mingw32)
+    pg (1.5.9)
     public_suffix (5.1.1)
     puma (3.12.6)
     racc (1.8.1)
@@ -222,7 +224,6 @@ GEM
     validate_url (1.0.15)
       activemodel (>= 3.0.0)
       public_suffix
-    wdm (0.2.0)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -237,7 +238,7 @@ GEM
       chronic (>= 0.6.3)
 
 PLATFORMS
-  x64-mingw32
+  ruby
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
@@ -245,11 +246,12 @@ DEPENDENCIES
   database_cleaner-active_record
   factory_bot_rails
   faker
+  ffi
   graphiql-rails (= 1.5.0)
   graphql
   graphql-query-resolver
   listen (>= 3.0.5, < 3.2)
-  pg (>= 0.18, < 2.0)
+  pg
   puma (~> 3.12)
   rack-cors
   rails (~> 5.2.0)
@@ -263,7 +265,6 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
   validate_url
-  wdm (>= 0.1.0)
   web-console (>= 3.3.0)
   whenever
 

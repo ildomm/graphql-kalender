@@ -6,12 +6,11 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bcrypt', '~> 3.1.7'
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg'
 gem 'puma', '~> 3.12'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 5.2.0'
 gem 'validate_url'
-gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 gem 'graphql'
 gem 'graphql-query-resolver'
@@ -20,9 +19,11 @@ gem 'search_object_graphql'
 gem 'selenium-webdriver'
 gem 'tzinfo-data'
 gem 'whenever', require: false
+gem 'nokogiri', '~> 1.15.7'
+gem 'ffi', platforms: [:ruby]
 
 group :development, :test do
-  gem 'byebug', platforms: %i(mri mingw x64_mingw)
+  gem 'byebug', platforms: [:ruby]
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
   gem 'faker'
